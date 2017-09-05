@@ -31,45 +31,31 @@
 <hr>
 
 <h3>Plugin Usage</h3>
-<p>Twig Filter</p>
+<p>Twig Filter:</p>
 <code>
 	<pre>
-		<script type="text/javascript" src="{{ 'js/global.js' | mix }}"></script>
+{{ '<script type="text/javascript" src="{{ \'js/global.js\' | mix }}"></script>' | e }}
+
+{{ '<link rel="stylesheet" href="{{ \'css/global.css\' | mix }}">' | e }}
 	</pre>
 </code>
-<p>Twig Function</p>
+<p>Twig Function:</p>
 <code>
 	<pre>
-		<script type="text/javascript" src="{{ mix('js/global.js') }}"></script>
+{{ '<script type="text/javascript" src="{{ mix(\'js/global.js\') }}"></script>' | e }}
+
+{{ '<link rel="stylesheet" href="{{ mix(\'css/global.css\') }}">' | e }}
 	</pre>
 </code>
 <p>CraftCMS Variable</p>
 <code>
 	<pre>
-		<script type="text/javascript" src="{{ craft.mix.withTag('js/global.js') }}"></script>
-	</pre>
-</code>
-<p>Twig Filter</p>
-<code>
-	<pre>
-		<link rel="stylesheet" href="{{ 'css/global.css' | mix }}">
-	</pre>
-</code>
-<p>Twig Function</p>
-<code>
-	<pre>
-		<link rel="stylesheet" href="{{ mix('css/global.cs') }}">
-	</pre>
-</code>
-<p>CraftCMS Variable - Lazy load a versioned file and build the tag based on the file extension.</p>
-<code>
-	<pre>
-		{{ '{{ craft.mix.withTag(\'css/global.css\') | raw }}' | e }}
-	</pre>
-</code>
-<p>CraftCMS Variable - Load the content of a versioned file inline.</p>
-<code>
-	<pre>
-		{{ '{{ craft.mix.withTag(\'css/global.css\', true) | raw }}' | e }}
+{{ '<script type="text/javascript" src="{{ craft.mix.withTag(\'js/global.js\') }}"></script>' | e }}
+
+// Lazy load a versioned file and build the tag based on the file extension.
+{{ '{{ craft.mix.withTag(\'css/global.css\') | raw }}' | e }}
+
+// Load the content of a versioned file inline.
+{{ '{{ craft.mix.withTag(\'css/global.css\', true) | raw }}' | e }}
 	</pre>
 </code>
