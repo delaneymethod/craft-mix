@@ -1,7 +1,7 @@
 {
     "name": "delaneymethod/craft-mix",
     "description": "Helper plugin for Laravel Mix in Craft CMS templates.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "craft-plugin",
     "license": "MIT",
     "keywords": [
