@@ -1,0 +1,60 @@
+{
+    "name": "delaneymethod/craft-mix",
+    "description": "Helper plugin for Laravel Mix in Craft CMS templates.",
+    "version": "1.0.0",
+    "type": "craft-plugin",
+    "license": "MIT",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "yii2",
+        "craft-plugin",
+        "mix",
+        "craft3",
+        "laravel",
+        "delaneymethod"
+    ],
+    "support": {
+	    "email": "hello@delaneymethod.com",
+		"issues": "https://github.com/delaneymethod/craft-mix/issues?state=open",
+		"source": "https://github.com/delaneymethod/craft-mix",
+		"docs": "https://github.com/delaneymethod/craft-mix",
+		"rss": "https://github.com/delaneymethod/craft-mix/commits/master.atom"
+    },
+    "authors": [
+        {
+            "name": "DelaneyMethod",
+            "email": "hello@delaneymethod.com",
+            "homepage": "http://www.delaneymethod.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "~3.0.0-beta.20"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "delaneymethod\\craft-mix\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft Mix",
+        "handle": "craft-mix",
+        "schemaVersion": "1.0.0",
+        "documentationUrl": "https://raw.githubusercontent.com/delaneymethod/craft-mix/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/delaneymethod/craft-mix/master/CHANGELOG.md",
+        "downloadUrl": "https://github.com/delaneymethod/craft-mix/archive/master.zip",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "components": {
+            "mix": "delaneymethod\\craft-mix\\services\\CraftMixService"
+        },
+        "class": "delaneymethod\\craft-mix\\CraftMix"
+    }
+}
