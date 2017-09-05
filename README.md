@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.rawgit.com/delaneymethod/craft-mix/master/craft-mix-logo.svg" alt="Craft Mix Logo">
+  <img src="https://cdn.rawgit.com/delaneymethod/craft-mix/564d7e39/craft-mix.png" alt="Craft Mix Logo">
 </p>
 
 <p align="center">
