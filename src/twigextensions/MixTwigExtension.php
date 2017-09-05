@@ -7,22 +7,22 @@
  * @link	  	http://www.delaneymethod.com/
  */
 
-namespace delaneymethod\craftmix\twigextensions;
+namespace delaneymethod\mix\twigextensions;
 
-use delaneymethod\craftmix\CraftMix;
+use delaneymethod\mix\Mix;
 
 use Twig_Extension;
 use Twig_SimpleFilter;
 use Twig_SimpleFunction;
 
-class CraftMixTwigExtension extends Twig_Extension
+class MixTwigExtension extends Twig_Extension
 {
 	/**
 	 * @inheritdoc
 	 */
 	public function getName()
 	{
-		return 'Craft Mix';
+		return 'Mix';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class CraftMixTwigExtension extends Twig_Extension
 	public function getFilters()
 	{
 		return [
-			new Twig_SimpleFilter('mix', [$this, 'craftMix']),
+			new Twig_SimpleFilter('mix', [$this, 'mix']),
 		];
 	}
 
@@ -41,7 +41,7 @@ class CraftMixTwigExtension extends Twig_Extension
 	public function getFunctions()
 	{
 		return [
-			new Twig_SimpleFunction('mix', [$this, 'craftMix']),
+			new Twig_SimpleFunction('mix', [$this, 'mix']),
 		];
 	}
 
@@ -53,12 +53,12 @@ class CraftMixTwigExtension extends Twig_Extension
 	 * @param	bool	 	$inline 	(optional)
 	 * @return string
 	 */
-	public function craftMix($file, $tag = false, $inline = false)
+	public function mix($file, $tag = false, $inline = false)
 	{
 		if ($tag) {
-			return CraftMix::$plugin->craftmix->withTag($file, $inline);
+			return Mix::$plugin->mix->withTag($file, $inline);
 		}
 
-		return CraftMix::$plugin->craftmix->version($file);
+		return Mix::$plugin->mix->version($file);
 	}
 }

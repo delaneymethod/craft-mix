@@ -7,16 +7,16 @@
  * @link	  	http://www.delaneymethod.com/
  */
 
-namespace delaneymethod\craftmix\services;
+namespace delaneymethod\mix\services;
 
-use delaneymethod\craftmix\CraftMix;
+use delaneymethod\mix\Mix;
 
 use Craft;
 use craft\base\Component;
 
 use Exception;
 
-class CraftMixService extends Component
+class MixService extends Component
 {
 	/**
 	 * Path to the root directory.
@@ -51,7 +51,7 @@ class CraftMixService extends Component
 	 */
 	public function init()
 	{
-		$settings = CraftMix::$plugin->getSettings();
+		$settings = Mix::$plugin->getSettings();
 
 		$this->rootPath = rtrim(CRAFT_BASE_PATH, '/');
 		

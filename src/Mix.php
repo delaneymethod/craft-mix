@@ -7,22 +7,21 @@
  * @link	  	http://www.delaneymethod.com/
  */
 
-namespace delaneymethod\craftmix;
+namespace delaneymethod\mix;
 
-use delaneymethod\craftmix\models\Settings;
-use delaneymethod\craftmix\twigextensions\CraftMixTwigExtension;
-use delaneymethod\craftmix\variables\CraftMixVariable;
+use delaneymethod\mix\models\Settings;
+use delaneymethod\mix\twigextensions\MixTwigExtension;
+use delaneymethod\mix\variables\MixVariable;
 
 use Craft;
 use craft\base\Plugin;
 
-class CraftMix extends Plugin
+class Mix extends Plugin
 {
 	/**
 	 * @var Mix
 	 */
 	public static $plugin;
-
 
 	/**
 	 * @inheritdoc
@@ -30,9 +29,10 @@ class CraftMix extends Plugin
 	public function init()
 	{
 		parent::init();
+		
 		self::$plugin = $this;
 
-		Craft::$app->view->twig->addExtension(new CraftMixTwigExtension());
+		Craft::$app->view->twig->addExtension(new MixTwigExtension());
 
 		Craft::info('Craft Mix plugin loaded', __METHOD__);
 	}
@@ -42,7 +42,7 @@ class CraftMix extends Plugin
 	 */
 	public function defineTemplateComponent()
 	{
-		return CraftMixVariable::class;
+		return MixVariable::class;
 	}
 
 	/**
@@ -59,7 +59,7 @@ class CraftMix extends Plugin
 	protected function settingsHtml(): string
 	{
 		return Craft::$app->view->renderTemplate(
-			'craftmix/settings',
+			'mix/settings',
 			['settings' => $this->getSettings()]
 		);
 	}

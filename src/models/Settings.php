@@ -7,7 +7,7 @@
  * @link		http://www.delaneymethod.com/
  */
 
-namespace delaneymethod\craftmix\models;
+namespace delaneymethod\mix\models;
 
 use craft\base\Model;
 

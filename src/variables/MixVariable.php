@@ -7,11 +7,11 @@
  * @link	  	http://www.delaneymethod.com/
  */
 
-namespace delaneymethod\craftmix\variables;
+namespace delaneymethod\mix\variables;
 
-use delaneymethod\craftmix\CraftMix;
+use delaneymethod\mix\Mix;
 
-class CraftMixVariable
+class MixVariable
 {
 	/**
 	 * Find the files version.
@@ -21,7 +21,7 @@ class CraftMixVariable
 	 */
 	public function version($file)
 	{
-		return CraftMix::$plugin->craftmix->version($file);
+		return Mix::$plugin->mix->version($file);
 	}
 
 	/**
@@ -33,6 +33,6 @@ class CraftMixVariable
 	 */
 	public function withTag($file, $inline = false)
 	{
-		return CraftMix::$plugin->craftmix->withTag($file, $inline);
+		return Mix::$plugin->mix->withTag($file, $inline);
 	}
 }
