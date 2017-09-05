@@ -34,42 +34,42 @@
 <p>Twig Filter</p>
 <code>
     <pre>
-    	<script type="text/javascript" src="{{ 'assets/js/global.js' | mix }}"></script>
+    	<script type="text/javascript" src="{{ 'js/global.js' | mix }}"></script>
     </pre>
 </code>
 <p>Twig Function</p>
 <code>
     <pre>
-    	<script type="text/javascript" src="{{ mix('assets/js/global.js') }}"></script>
+    	<script type="text/javascript" src="{{ mix('js/global.js') }}"></script>
     </pre>
 </code>
 <p>CraftCMS Variable</p>
 <code>
     <pre>
-    	<script type="text/javascript" src="{{ craft.mix.getAssetPath('assets/js/global.js') }}"></script>
+    	<script type="text/javascript" src="{{ craft.craftMix.withTag('js/global.js') }}"></script>
     </pre>
 </code>
 <p>Twig Filter</p>
 <code>
     <pre>
-    	<link rel="stylesheet" href="{{ 'assets/css/global.css' | mix }}">
+    	<link rel="stylesheet" href="{{ 'css/global.css' | mix }}">
     </pre>
 </code>
 <p>Twig Function</p>
 <code>
     <pre>
-    	<link rel="stylesheet" href="{{ mix('assets/css/global.cs') }}">
+    	<link rel="stylesheet" href="{{ mix('css/global.cs') }}">
     </pre>
 </code>
 <p>CraftCMS Variable - Lazy load a versioned file and build the tag based on the file extension.</p>
 <code>
     <pre>
-    	{{ '{{ craft.mix.withTag(\'assets/css/global.css\') | raw }}' | e }}
+    	{{ '{{ craft.craftMix.withTag(\'css/global.css\') | raw }}' | e }}
     </pre>
 </code>
 <p>CraftCMS Variable - Load the content of a versioned file inline.</p>
 <code>
     <pre>
-    	{{ '{{ craft.mix.withTag(\'assets/css/global.css\', true) | raw }}' | e }}
+    	{{ '{{ craft.craftMix.withTag(\'css/global.css\', true) | raw }}' | e }}
     </pre>
 </code>

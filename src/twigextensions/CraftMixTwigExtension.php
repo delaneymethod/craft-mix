@@ -31,7 +31,7 @@ class CraftMixTwigExtension extends Twig_Extension
     public function getFilters()
     {
         return [
-            new Twig_SimpleFilter('mix', [$this, 'mix']),
+            new Twig_SimpleFilter('mix', [$this, 'craftMix']),
         ];
     }
 
@@ -41,7 +41,7 @@ class CraftMixTwigExtension extends Twig_Extension
     public function getFunctions()
     {
         return [
-            new Twig_SimpleFunction('mix', [$this, 'mix']),
+            new Twig_SimpleFunction('mix', [$this, 'craftMix']),
         ];
     }
 

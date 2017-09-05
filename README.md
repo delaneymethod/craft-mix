@@ -1,14 +1,28 @@
 <p align="center">
-  <img src="https://github.com/delaneymethod/craft-mix/blob/master/craft-mix.png" width="300px" alt="Craft Mix Logo">
+  <img src="https://github.com/delaneymethod/craft-mix/blob/master/resources/img/craft-mix.png" width="300px" alt="Craft Mix Logo">
 </p>
 
 <p align="center">
   Helper plugin for <a href="https://github.com/JeffreyWay/laravel-mix/">Laravel Mix</a> in <a href="https://github.com/craftcms/cms/">Craft CMS</a> templates.
 </p>
 
+<p align="center">
+  <a href="https://packagist.org/packages/delaneymethod/craft-mix/">
+    <img src="https://poser.pugx.org/delaneymethod/craft-mix/d/total.svg" alt="Total Downloads">
+  </a>
+  <a href="https://packagist.org/packages/delaneymethod/craft-mix/">
+    <img src="https://poser.pugx.org/delaneymethod/craft-mix/v/stable.svg" alt="Latest Stable Version">
+  </a>
+  <a href="https://packagist.org/packages/delaneymethod/craft-mix/">
+    <img src="https://poser.pugx.org/delaneymethod/craft-mix/license.svg" alt="License">
+  </a>
+</p>
+
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.20 or later.
+  * Craft CMS 3+
+  * PHP 7 PHP 7+
+  * Node.js 6+
 
 ## Installation
 
@@ -16,13 +30,17 @@ To install the plugin, follow these instructions.
 
 1. Open your terminal and go to your Craft project:
 
-        `cd /path/to/project`
+```bash
+cd /path/to/project
+```
 
 2. Then tell Composer to load the plugin:
 
-        `composer require delaneymethod/craft-mix`
+```bash
+composer require delaneymethod/craft-mix
+```
 
-3. In the Control Panel, go to Settings → Plugins and click the "Install" button for <strong>Craft Mix</strong>.
+3. In the Craft Control Panel, go to Settings → Plugins and click the "Install" button for **Craft Mix**.
 
 4. Create a `package.json` file with the following contents to install Laravel Mix dependencies and configure asset build tasks.
 
@@ -54,6 +72,13 @@ npm install # OR yarn install
 
 ## Configuration
 
+To configure Craft Mix go to Settings → Plugins → Craft Mix in the Craft Control Panel.
+
+The available settings are:
+
+  * **Public Path** - The path of the public directory containing the index.php
+  * **Asset Path** - The path of the asset directory where Laravel Mix stores the compiled files
+
 To demonstrate usage of the plugin, let's imagine a project with the following directory structure.
 
 ```
@@ -78,7 +103,7 @@ const { mix } = require('laravel-mix');
 
 del(['web/assets/**', '!web/assets']);
 
-mix.setPublicPath('web');
+mix.setPublicPath('web/assets');
 
 if (mix.inProduction) {
     mix.disableNotifications();
@@ -109,25 +134,22 @@ The primary purpose of this plugin is to provide template helpers that translate
 
 ```twig
 {# Twig Filter #}
-<script type="text/javascript" src="{{ 'assets/js/global.js' | mix }}"></script>
+<script type="text/javascript" src="{{ 'js/global.js' | mix }}"></script>
+
+<link rel="stylesheet" href="{{ 'css/global.css' | mix }}">
 
 {# Twig Function #}
-<script type="text/javascript" src="{{ mix('assets/js/global.js') }}"></script>
+<script type="text/javascript" src="{{ mix('js/global.js') }}"></script>
+
+<link rel="stylesheet" href="{{ mix('css/global.cs') }}">
 
 {# CraftCMS Variable #}
-<script type="text/javascript" src="{{ craft.mix.getAssetPath('assets/js/global.js') }}"></script>
+<script type="text/javascript" src="{{ craft.mix.withTag('js/global.js') }}"></script>
 
-{# Twig Filter #}
-<link rel="stylesheet" href="{{ 'assets/css/global.css' | mix }}">
+{{ craft.mix.withTag(\'css/global.css\') | raw }}
 
-{# Twig Function #}
-<link rel="stylesheet" href="{{ mix('assets/css/global.cs') }}">
-
-{# CraftCMS Variable - Lazy load a versioned file and build the tag based on the file extension. #}
-{{ '{{ craft.mix.withTag(\'assets/css/global.css\') | raw }}' | e }}
-
-{# CraftCMS Variable - Load the content of a versioned file inline. #}
-{{ '{{ craft.mix.withTag(\'assets/css/global.css\', true) | raw }}' | e }}
+// include the content of a versioned file inline.
+{{ craft.mix.withTag(\'css/global.css\', true) | raw }}
 ```
 
 There are a handful of different modes in which you can run Mix and the plugin will work differently in each mode, as described in the following sections.
@@ -138,35 +160,6 @@ Dev mode will build your assets to target a development environment. Depending o
 
 ```bash
 npm run dev
-```
-
-This will generate the following files in our example project structure:
-
-```
-web/
-  assets/
-    mix.js
-    mix-manifest.json
-    css/
-      global.css
-    js/
-      global.js
-```
-
-You can then use the Twig helpers from this plugin in your templates to load the assets from the `mix-manifest.json` file:
- 
-```twig
-<link rel="stylesheet" href="{{ mix('assets/css/global.css') }}">
-...
-<script type="text/javascript" src="{{ mix('assets/js/global.js') }}"></script>
-```
-
-Yields
-
-```twig
-<link rel="stylesheet" href="/assets/css/global.css">
-...
-<script type="text/javascript" src="/assets/js/global.js"></script>
 ```
 
 ### Watch Mode
@@ -185,56 +178,12 @@ Builds your assets and runs the Webpack dev server to allow [Hot Module Replacem
 npm run hot
 ```
 
-You can then use the Twig helpers from this plugin in your templates to load the assets from the Webpack dev server (running at `//localhost:8080`):
- 
-```twig
-<link rel="stylesheet" href="{{ mix('assets/css/global.css') }}">
-...
-<script type="text/javascript" src="{{ mix('assets/js/global.js') }}"></script>
-```
-
-Yields
-
-```twig
-<link rel="stylesheet" href="//localhost:8080/assets/css/global.css">
-...
-<script type="text/javascript" src="//localhost:8080/assets/js/global.js"></script>
-```
-
 ### Production Mode
 
 or bundle your assets for production
 
 ```bash
 npm run production
-```
-
-This will generate the following files in our example project structure:
-
-```
-web/
-  assets/
-    mix-manifest.json
-    css/
-      global.css
-    js/
-      global.js
-```
-
-You can then use the Twig helpers from this plugin in your templates to load the assets from the `mix-manifest.json` file:
- 
-```twig
-<link rel="stylesheet" href="{{ mix('assets/css/global.css') }}">
-...
-<script type="text/javascript" src="{{ mix('assets/js/global.js') }}"></script>
-```
-
-Yields
-
-```twig
-<link rel="stylesheet" href="/assets/css/global.css?id=3b3bff1760a5005737de">
-...
-<script type="text/javascript" src="/assets/js/global.js?id=5f474c7493fb1b375dca"></script>
 ```
 
 ## Credits

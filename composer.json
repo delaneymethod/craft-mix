@@ -30,7 +30,7 @@
         }
     ],
     "require": {
-        "craftcms/cms": "~3.0.0-beta.20"
+        "craftcms/cms": "~3.0.0-beta.26"
     },
     "repositories": [
         {
@@ -47,7 +47,7 @@
         "name": "Craft Mix",
         "handle": "craft-mix",
         "schemaVersion": "1.0.0",
-        "documentationUrl": "https://raw.githubusercontent.com/delaneymethod/craft-mix/master/README.md",
+        "documentationUrl": "https://github.com/delaneymethod/craft-mix/blob/master/README.md",
         "changelogUrl": "https://raw.githubusercontent.com/delaneymethod/craft-mix/master/CHANGELOG.md",
         "downloadUrl": "https://github.com/delaneymethod/craft-mix/archive/master.zip",
         "hasCpSettings": true,
