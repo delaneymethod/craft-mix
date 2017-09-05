@@ -1,21 +1,9 @@
 <p align="center">
-  <img src="https://github.com/delaneymethod/craft-mix/blob/master/craft-mix.png" alt="Craft Mix Logo">
+  <img src="https://github.com/delaneymethod/craft-mix/blob/master/craft-mix.png" width="300px" alt="Craft Mix Logo">
 </p>
 
 <p align="center">
   Helper plugin for <a href="https://github.com/JeffreyWay/laravel-mix/">Laravel Mix</a> in <a href="https://github.com/craftcms/cms/">Craft CMS</a> templates.
-</p>
-
-<p align="center">
-  <a href="https://packagist.org/packages/delaneymethod/craft-mix">
-    <img src="https://poser.pugx.org/delaneymethod/craft-mix/d/total.svg" alt="Total Downloads">
-  </a>
-  <a href="https://packagist.org/packages/delaneymethod/craft-mix">
-    <img src="https://poser.pugx.org/delaneymethod/craft-mix/v/stable.svg" alt="Latest Stable Version">
-  </a>
-  <a href="https://packagist.org/packages/delaneymethod/craft-mix">
-    <img src="https://poser.pugx.org/delaneymethod/craft-mix/license.svg" alt="License">
-  </a>
 </p>
 
 ## Requirements
