@@ -1,5 +1,5 @@
 {
-    "name": "delaneymethod/craft-mix",
+    "name": "delaneymethod/craftmix",
     "description": "Helper plugin for Laravel Mix in Craft CMS templates.",
     "version": "1.0.1",
     "type": "craft-plugin",
@@ -17,10 +17,10 @@
     ],
     "support": {
 	    "email": "hello@delaneymethod.com",
-		"issues": "https://github.com/delaneymethod/craft-mix/issues?state=open",
-		"source": "https://github.com/delaneymethod/craft-mix",
-		"docs": "https://github.com/delaneymethod/craft-mix",
-		"rss": "https://github.com/delaneymethod/craft-mix/commits/master.atom"
+		"issues": "https://github.com/delaneymethod/craftmix/issues?state=open",
+		"source": "https://github.com/delaneymethod/craftmix",
+		"docs": "https://github.com/delaneymethod/craftmix",
+		"rss": "https://github.com/delaneymethod/craftmix/commits/master.atom"
     },
     "authors": [
         {
@@ -40,21 +40,21 @@
     ],
     "autoload": {
         "psr-4": {
-            "delaneymethod\\craft-mix\\": "src/"
+            "delaneymethod\\craftmix\\": "src/"
         }
     },
     "extra": {
         "name": "Craft Mix",
-        "handle": "craft-mix",
+        "handle": "craftmix",
         "schemaVersion": "1.0.0",
-        "documentationUrl": "https://github.com/delaneymethod/craft-mix/blob/master/README.md",
-        "changelogUrl": "https://raw.githubusercontent.com/delaneymethod/craft-mix/master/CHANGELOG.md",
-        "downloadUrl": "https://github.com/delaneymethod/craft-mix/archive/master.zip",
+        "documentationUrl": "https://github.com/delaneymethod/craftmix/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/delaneymethod/craftmix/master/CHANGELOG.md",
+        "downloadUrl": "https://github.com/delaneymethod/craftmix/archive/master.zip",
         "hasCpSettings": true,
         "hasCpSection": false,
         "components": {
-            "mix": "delaneymethod\\craft-mix\\services\\CraftMixService"
+            "craftmix": "delaneymethod\\craftmix\\services\\CraftMixService"
         },
-        "class": "delaneymethod\\craft-mix\\CraftMix"
+        "class": "delaneymethod\\craftmix\\CraftMix"
     }
 }

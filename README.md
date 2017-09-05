@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/delaneymethod/craft-mix/blob/master/resources/img/craft-mix.png" width="300px" alt="Craft Mix Logo">
+  <img src="https://github.com/delaneymethod/craftmix/blob/master/resources/img/craft-mix.png" width="300px" alt="Craft Mix Logo">
 </p>
 
 <p align="center">
@@ -7,14 +7,14 @@
 </p>
 
 <p align="center">
-  <a href="https://packagist.org/packages/delaneymethod/craft-mix/">
-    <img src="https://poser.pugx.org/delaneymethod/craft-mix/d/total.svg" alt="Total Downloads">
+  <a href="https://packagist.org/packages/delaneymethod/craftmix/">
+    <img src="https://poser.pugx.org/delaneymethod/craftmix/d/total.svg" alt="Total Downloads">
   </a>
-  <a href="https://packagist.org/packages/delaneymethod/craft-mix/">
-    <img src="https://poser.pugx.org/delaneymethod/craft-mix/v/stable.svg" alt="Latest Stable Version">
+  <a href="https://packagist.org/packages/delaneymethod/craftmix/">
+    <img src="https://poser.pugx.org/delaneymethod/craftmix/v/stable.svg" alt="Latest Stable Version">
   </a>
-  <a href="https://packagist.org/packages/delaneymethod/craft-mix/">
-    <img src="https://poser.pugx.org/delaneymethod/craft-mix/license.svg" alt="License">
+  <a href="https://packagist.org/packages/delaneymethod/craftmix/">
+    <img src="https://poser.pugx.org/delaneymethod/craftmix/license.svg" alt="License">
   </a>
 </p>
 
@@ -37,7 +37,7 @@ cd /path/to/project
 2. Then tell Composer to load the plugin:
 
 ```bash
-composer require delaneymethod/craft-mix
+composer require delaneymethod/craftmix
 ```
 
 3. In the Craft Control Panel, go to Settings → Plugins and click the "Install" button for **Craft Mix**.
