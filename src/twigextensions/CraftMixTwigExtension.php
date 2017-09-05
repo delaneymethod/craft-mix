@@ -2,7 +2,7 @@
 /**
  * Craft Mix
  *
- * @author	  	DelaneyMethod
+ * @author 		DelaneyMethod
  * @copyright 	Copyright (c) 2017
  * @link	  	http://www.delaneymethod.com/
  */
@@ -48,9 +48,9 @@ class CraftMixTwigExtension extends Twig_Extension
 	/**
 	 * Returns versioned file or the entire tag.
 	 *
-	 * @param  string  $file
-	 * @param  bool	 $tag  (optional)
-	 * @param  bool	 $inline  (optional)
+	 * @param	string		$file
+	 * @param	bool	 	$tag 		(optional)
+	 * @param	bool	 	$inline 	(optional)
 	 * @return string
 	 */
 	public function craftMix($file, $tag = false, $inline = false)

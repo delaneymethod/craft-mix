@@ -27,8 +27,8 @@ class CraftMixVariable
 	/**
 	 * Returns the files version with the appropriate tag.
 	 *
-	 * @param  string  $file
-	 * @param  bool	 $inline  (optional)
+	 * @param  string  	$file
+	 * @param  bool	 	$inline  (optional)
 	 * @return string
 	 */
 	public function withTag($file, $inline = false)

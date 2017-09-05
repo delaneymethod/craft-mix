@@ -22,14 +22,14 @@ class CraftMix extends Plugin
 	 * @var Mix
 	 */
 	public static $plugin;
-	
+
+
 	/**
 	 * @inheritdoc
 	 */
 	public function init()
 	{
 		parent::init();
-		
 		self::$plugin = $this;
 
 		Craft::$app->view->twig->addExtension(new CraftMixTwigExtension());
@@ -56,7 +56,7 @@ class CraftMix extends Plugin
 	/**
 	 * @inheritdoc
 	 */
-	protected function settingsHtml() : string
+	protected function settingsHtml(): string
 	{
 		return Craft::$app->view->renderTemplate(
 			'craftmix/settings',

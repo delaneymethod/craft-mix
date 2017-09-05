@@ -2,7 +2,7 @@
 /**
  * Craft Mix
  *
- * @author 		DelaneyMethod
+ * @author	  	DelaneyMethod
  * @copyright 	Copyright (c) 2017
  * @link	  	http://www.delaneymethod.com/
  */
@@ -45,15 +45,14 @@ class CraftMixService extends Component
 	 * @var string
 	 */
 	protected $manifest;
-
-
+	
 	/**
 	 * @inheritdoc
 	 */
 	public function init()
 	{
 		$settings = CraftMix::$plugin->getSettings();
-		
+
 		$this->rootPath = rtrim(CRAFT_BASE_PATH, '/');
 		
 		$this->publicPath = trim($settings->publicPath, '/');
@@ -71,7 +70,7 @@ class CraftMixService extends Component
 	/**
 	 * Find the files version.
 	 *
-	 * @param	string	$file
+	 * @param  string  $file
 	 * @return string
 	 */
 	public function version($file)
@@ -92,8 +91,8 @@ class CraftMixService extends Component
 	/**
 	 * Returns the files version with the appropriate tag.
 	 *
-	 * @param	string	$file
-	 * @param	bool	 $inline  (optional)
+	 * @param  string 	$file
+	 * @param  bool	 	$inline  (optional)
 	 * @return string
 	 */
 	public function withTag($file, $inline = false)

@@ -2,9 +2,9 @@
 /**
  * Craft Mix
  *
- * @author 		DelaneyMethod
+ * @author	  	DelaneyMethod
  * @copyright 	Copyright (c) 2017
- * @link	  	http://www.delaneymethod.com/
+ * @link		http://www.delaneymethod.com/
  */
 
 namespace delaneymethod\craftmix\models;

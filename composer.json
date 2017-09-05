@@ -11,6 +11,7 @@
         "yii2",
         "craft-plugin",
         "mix",
+        "craftmix",
         "craft3",
         "laravel",
         "delaneymethod"
