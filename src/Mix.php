@@ -32,7 +32,7 @@ class Mix extends Plugin
 		
 		self::$plugin = $this;
 
-		Craft::$app->view->twig->addExtension(new MixTwigExtension());
+		Craft::$app->view->registerTwigExtension(new MixTwigExtension());
 
 		Craft::info('Craft Mix plugin loaded', __METHOD__);
 	}
