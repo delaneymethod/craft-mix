@@ -20,7 +20,7 @@
 
 ## Requirements
 
-  * Craft CMS 3+
+  * Craft CMS 3.6.7+
   * PHP 7 PHP 7+
   * Node.js 6+
 
