@@ -1,0 +1,61 @@
+{#
+/**
+ * Craft Mix
+ *
+ * @author      DelaneyMethod
+ * @copyright   Copyright (c) 2017
+ * @link        http://www.delaneymethod.com/
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+	label: 'Public Path',
+	instructions: 'The path of the public directory containing the index.php.',
+	id: 'publicPath',
+	name: 'publicPath',
+	value: settings.publicPath,
+	required: true
+}) }}
+
+{{ forms.textField({
+	label: 'Asset Path',
+	instructions: 'The path of the asset directory where Laravel Mix stores the compiled files.',
+	id: 'assetPath',
+	name: 'assetPath',
+	value: settings.assetPath,
+	required: true
+}) }}
+
+<hr>
+
+<h3>Plugin Usage</h3>
+<p>Twig Filter:</p>
+<code>
+	<pre>
+{{ '<script type="text/javascript" src="{{ \'js/global.js\' | mix }}"></script>' | e }}
+
+{{ '<link rel="stylesheet" href="{{ \'css/global.css\' | mix }}">' | e }}
+	</pre>
+</code>
+<p>Twig Function:</p>
+<code>
+	<pre>
+{{ '<script type="text/javascript" src="{{ mix(\'js/global.js\') }}"></script>' | e }}
+
+{{ '<link rel="stylesheet" href="{{ mix(\'css/global.css\') }}">' | e }}
+	</pre>
+</code>
+<p>CraftCMS Variable</p>
+<code>
+	<pre>
+{{ '<script type="text/javascript" src="{{ craft.mix.withTag(\'js/global.js\') }}"></script>' | e }}
+
+// Lazy load a versioned file and build the tag based on the file extension.
+{{ '{{ craft.mix.withTag(\'css/global.css\') | raw }}' | e }}
+
+// Load the content of a versioned file inline.
+{{ '{{ craft.mix.withTag(\'css/global.css\', true) | raw }}' | e }}
+	</pre>
+</code>
