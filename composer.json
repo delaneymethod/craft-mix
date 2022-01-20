@@ -30,7 +30,7 @@
         }
     ],
     "require": {
-        "craftcms/cms": "3.7.26"
+        "craftcms/cms": "^3.7"
     },
     "repositories": [
         {
