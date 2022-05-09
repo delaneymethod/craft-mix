@@ -1,7 +1,7 @@
 {
     "name": "delaneymethod/craft-mix",
     "description": "Helper plugin for Laravel Mix in Craft CMS templates.",
-    "version": "1.0.7",
+    "version": "4.0.0",
     "type": "craft-plugin",
     "license": "MIT",
     "keywords": [
@@ -12,7 +12,7 @@
         "craft-plugin",
         "mix",
         "craft-mix",
-        "craft3",
+        "craft4",
         "laravel",
         "delaneymethod"
     ],
@@ -21,7 +21,7 @@
 		"issues": "https://github.com/delaneymethod/craft-mix/issues?state=open",
 		"source": "https://github.com/delaneymethod/craft-mix",
 		"docs": "https://github.com/delaneymethod/craft-mix",
-		"rss": "https://github.com/delaneymethod/craft-mix/commits/master.atom"
+		"rss": "https://github.com/delaneymethod/craft-mix/commits/v4.atom"
     },
     "authors": [
         {
@@ -31,7 +31,13 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.7"
+        "php": "^8.0.2",
+        "craftcms/cms": "^4.0.0-beta.2"
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "^5.4",
+        "codeception/module-yii2": "^1.1",
+        "craftcms/rector": "dev-main"
     },
     "repositories": [
         {
@@ -47,15 +53,17 @@
     "extra": {
         "name": "Craft Mix",
         "handle": "craft-mix",
-        "schemaVersion": "1.0.0",
-        "documentationUrl": "https://github.com/delaneymethod/craft-mix/blob/master/README.md",
-        "changelogUrl": "https://raw.githubusercontent.com/delaneymethod/craft-mix/master/CHANGELOG.md",
-        "downloadUrl": "https://github.com/delaneymethod/craft-mix/archive/master.zip",
+        "schemaVersion": "4.0.0",
+        "documentationUrl": "https://github.com/delaneymethod/craft-mix/blob/v4/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/delaneymethod/craft-mix/v4/CHANGELOG.md",
+        "downloadUrl": "https://github.com/delaneymethod/craft-mix/archive/v4.zip",
         "hasCpSettings": true,
         "hasCpSection": false,
         "components": {
             "craftMix": "delaneymethod\\craftMix\\services\\CraftMixService"
         },
         "class": "delaneymethod\\craftMix\\CraftMix"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

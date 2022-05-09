@@ -18,19 +18,19 @@ class Settings extends Model
 	 *
 	 * @var string
 	 */
-	public $publicPath = 'web';
+	public string $publicPath = 'web';
 
 	/**
 	 * Path to the asset directory.
 	 *
 	 * @var string
 	 */
-	public $assetPath = 'assets';
+	public string $assetPath = 'assets';
 
 	/**
-	 * @inheritdoc
+	 * @return array[]
 	 */
-	public function rules()
+	public function rules(): array
 	{
 		return [
 			[['publicPath', 'assetPath'], 'required'],

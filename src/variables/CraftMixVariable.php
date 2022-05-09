@@ -16,10 +16,10 @@ class CraftMixVariable
 	/**
 	 * Find the files version.
 	 *
-	 * @param  string  $file
+	 * @param string $file
 	 * @return string
 	 */
-	public function version($file)
+	public function version(string $file): string
 	{
 		return CraftMix::$plugin->craftMix->version($file);
 	}
@@ -27,11 +27,11 @@ class CraftMixVariable
 	/**
 	 * Returns the files version with the appropriate tag.
 	 *
-	 * @param  string  	$file
-	 * @param  bool	 	$inline  (optional)
+	 * @param string $file
+	 * @param bool $inline
 	 * @return string
 	 */
-	public function withTag($file, $inline = false)
+	public function withTag(string $file, bool $inline = false): string
 	{
 		return CraftMix::$plugin->craftMix->withTag($file, $inline);
 	}

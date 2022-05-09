@@ -20,15 +20,15 @@ class CraftMixTwigExtension extends AbstractExtension
 	/**
 	 * @return string
 	 */
-	public function getName()
+	public function getName(): string
 	{
 		return 'Craft Mix';
 	}
 
 	/**
-	 * @inheritdoc
+	 * @return TwigFilter[]
 	 */
-	public function getFilters()
+	public function getFilters(): array
 	{
 		return [
 			new TwigFilter('mix', [$this, 'mix']),
@@ -36,9 +36,9 @@ class CraftMixTwigExtension extends AbstractExtension
 	}
 
 	/**
-	 * @inheritdoc
+	 * @return TwigFunction[]
 	 */
-	public function getFunctions()
+	public function getFunctions(): array
 	{
 		return [
 			new TwigFunction('mix', [$this, 'mix']),
@@ -48,12 +48,12 @@ class CraftMixTwigExtension extends AbstractExtension
 	/**
 	 * Returns versioned file or the entire tag.
 	 *
-	 * @param	string    $file
-	 * @param	bool	 	  $tag      (optional)
-	 * @param	bool	 	  $inline   (optional)
+	 * @param string $file
+	 * @param bool $tag
+	 * @param bool $inline
 	 * @return string
 	 */
-	public function mix($file, $tag = false, $inline = false)
+	public function mix(string $file, bool $tag = false, bool $inline = false): string
 	{
 		if ($tag) {
 			return CraftMix::$plugin->craftMix->withTag($file, $inline);

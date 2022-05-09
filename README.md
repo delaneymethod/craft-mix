@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/delaneymethod/craft-mix/blob/master/resources/img/craft-mix.png" width="300px" alt="Craft Mix Logo">
+  <img src="https://github.com/delaneymethod/craft-mix/blob/v4/resources/img/craft-mix.png" width="300px" alt="Craft Mix Logo">
 </p>
 
 <p align="center">
@@ -20,9 +20,8 @@
 
 ## Requirements
 
-  * Craft CMS 3.7+
-  * PHP
-  * Node.js 6+
+  * Craft CMS 4+
+  * PHP 8+
 
 ## Installation
 

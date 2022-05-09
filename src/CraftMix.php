@@ -9,19 +9,23 @@
 
 namespace delaneymethod\craftMix;
 
-use delaneymethod\craftMix\models\Settings;
-use delaneymethod\craftMix\twigextensions\CraftMixTwigExtension;
-use delaneymethod\craftMix\variables\CraftMixVariable;
-
 use Craft;
+use craft\base\Model;
 use craft\base\Plugin;
+use yii\base\Exception;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
+use delaneymethod\craftMix\models\Settings;
+use delaneymethod\craftMix\variables\CraftMixVariable;
+use delaneymethod\craftMix\twigextensions\CraftMixTwigExtension;
 
 class CraftMix extends Plugin
 {
 	/**
 	 * @var CraftMix
 	 */
-	public static $plugin;
+	public static CraftMix $plugin;
 
 	/**
 	 * @inheritdoc
@@ -29,7 +33,7 @@ class CraftMix extends Plugin
 	public function init()
 	{
 		parent::init();
-		
+
 		self::$plugin = $this;
 
 		Craft::$app->view->registerTwigExtension(new CraftMixTwigExtension());
@@ -40,27 +44,30 @@ class CraftMix extends Plugin
 	/**
 	 * @return string
 	 */
-	public function defineTemplateComponent()
+	public function defineTemplateComponent(): string
 	{
 		return CraftMixVariable::class;
 	}
 
 	/**
-	 * @inheritdoc
+	 * @return Model|null
 	 */
-	protected function createSettingsModel()
+	protected function createSettingsModel(): ?Model
 	{
 		return new Settings();
 	}
 
 	/**
-	 * @inheritdoc
+	 * @return string|null
+	 * @throws Exception
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
 	 */
-	protected function settingsHtml(): string
+	protected function settingsHtml(): ?string
 	{
-		return Craft::$app->view->renderTemplate(
-			'craft-mix/settings',
-			['settings' => $this->getSettings()]
-		);
+		return Craft::$app->view->renderTemplate('craft-mix/settings', [
+			'settings' => $this->getSettings()
+		]);
 	}
 }

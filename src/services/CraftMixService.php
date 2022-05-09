@@ -23,42 +23,42 @@ class CraftMixService extends Component
 	 *
 	 * @var string
 	 */
-	protected $rootPath;
+	protected string $rootPath;
 
 	/**
 	 * Path to the public directory.
 	 *
 	 * @var string
 	 */
-	protected $publicPath;
+	protected string $publicPath;
 
 	/**
 	 * Path to the asset directory.
 	 *
 	 * @var string
 	 */
-	protected $assetPath;
+	protected string $assetPath;
 
 	/**
 	 * Path of the manifest file.
 	 *
 	 * @var string
 	 */
-	protected $manifest;
-	
+	protected string $manifest;
+
 	/**
-	 * @inheritdoc
+	 * @return void
 	 */
-	public function init()
+	public function init(): void
 	{
 		$settings = CraftMix::$plugin->getSettings();
 
 		$this->rootPath = rtrim(CRAFT_BASE_PATH, '/');
-		
+
 		$this->publicPath = trim($settings->publicPath, '/');
-		
+
 		$this->assetPath = trim($settings->assetPath, '/');
-		
+
 		$this->manifest = join('/', [
 			$this->rootPath,
 			$this->publicPath,
@@ -70,19 +70,19 @@ class CraftMixService extends Component
 	/**
 	 * Find the files version.
 	 *
-	 * @param  string  $file
+	 * @param string $file
 	 * @return string
 	 */
-	public function version($file)
+	public function version(string $file): string
 	{
 		try {
 			$manifest = $this->readManifestFile();
+
+			if ($manifest) {
+				$file = $manifest['/' . ltrim($file, '/')];
+			}
 		} catch (Exception $e) {
 			Craft::info('Craft Mix: ' . printf($e->getMessage()), __METHOD__);
-		}
-
-		if ($manifest) {
-			$file = $manifest['/' . ltrim($file, '/')];
 		}
 
 		return '/' . $this->assetPath . '/' . ltrim($file, '/');
@@ -91,25 +91,25 @@ class CraftMixService extends Component
 	/**
 	 * Returns the files version with the appropriate tag.
 	 *
-	 * @param  string 	$file
-	 * @param  bool	 	$inline  (optional)
+	 * @param string $file
+	 * @param bool $inline
 	 * @return string
 	 */
-	public function withTag($file, $inline = false)
+	public function withTag(string $file, bool $inline = false): string
 	{
 		$versionedFile = $this->version($file);
-		
+
 		$extension = pathinfo($file, PATHINFO_EXTENSION);
 
 		if ($inline) {
 			$versionedFile = strtok($versionedFile, '?');
-			
+
 			$absoluteFile = join('/', [
 				$this->rootPath,
 				$this->publicPath,
 				ltrim($versionedFile, '/')
 			]);
-			
+
 			if (file_exists($absoluteFile)) {
 				$content = file_get_contents($absoluteFile);
 
@@ -133,7 +133,7 @@ class CraftMixService extends Component
 	 *
 	 * @return array|bool
 	 */
-	protected function readManifestFile()
+	protected function readManifestFile(): bool|array
 	{
 		if (file_exists($this->manifest)) {
 			return json_decode(file_get_contents($this->manifest), true);
